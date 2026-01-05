@@ -1,5 +1,5 @@
 import pandas as pd
-
+import streamlit as st
 
 def derive_date_parts(date_value):
     date_obj = pd.to_datetime(date_value)
@@ -15,3 +15,9 @@ def derive_date_parts(date_value):
     )
 
     return weekday, month, int(week_in_month)
+
+
+def load_css(file_name: str):
+    with open(file_name) as f:
+        css = f"<style>{f.read()}</style>"
+        st.markdown(css, unsafe_allow_html=True)

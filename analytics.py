@@ -23,7 +23,3 @@ def monthly_summary(df):
 
 def category_summary(df):
     return df.groupby("type")["amount"].sum().reset_index()
-
-
-def weekday_summary(df):
-    return df.groupby("weekday")["amount"].sum().reset_index()
